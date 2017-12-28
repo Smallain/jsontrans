@@ -28,7 +28,8 @@ object StructAnalysis extends WriteToFile {
 						mapAnalysis(tmp)
 					}
 				} //mapAnalysis(map)
-				case _ => withWriter("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_analysis_error")("error")
+				case _ => "unknown data struct"
+				//withWriter("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_analysis_error")()
 				
 			}
 			map_j += (key -> value_in)
