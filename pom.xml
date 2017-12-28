@@ -59,6 +59,14 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- scala io  -->
+        <!-- https://mvnrepository.com/artifact/com.github.pathikrit/better-files -->
+        <dependency>
+            <groupId>com.github.pathikrit</groupId>
+            <artifactId>better-files_2.11</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>sparkLearn</finalName>

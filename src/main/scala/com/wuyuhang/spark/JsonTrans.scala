@@ -21,12 +21,12 @@ object JsonTrans extends WriteToFile {
 			{
 				//List[Map[String, Any]]]
 				//val tmpls = list("data").head("payload")
-				withWriter("/Users/smallain/data_tmp/its_log/succ")("its_log_succeed_trans")(input)
+				scalaWriteAppendLine("/Users/smallain/data_tmp/its_log/succ")("its_log_succeed_trans.txt")(input)
 				//println(tmpls.getClass)
 			}
 			
 			//匹配Json失败
-			case None => withWriter("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_trans")(input)
+			case None => scalaWriteAppendLine("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_trans.txt")(input)
 			
 			//其他情况
 			case other => println("Unknown data structure: " + other)
@@ -59,13 +59,13 @@ object JsonTrans extends WriteToFile {
 				
 				val tmp = JSONObject(map_sorted)
 				
-				withWriter("/Users/smallain/data_tmp/its_log/succ")("its_log_transed_sorted_json")(tmp.toString())
-				withWriterDel("/Users/smallain/data_tmp/its_log/succ")("its_log_keySet")(keylist.toString())
+				scalaWriteAppendLine("/Users/smallain/data_tmp/its_log/succ")("its_log_transed_sorted_json.txt")(tmp.toString())
+				scalaWriteOverWrite("/Users/smallain/data_tmp/its_log/succ")("its_log_keySet.txt")(keylist.toString())
 				
 			}
 			
 			//匹配Json失败
-			case None => withWriter("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_trans2")(input)
+			case None => scalaWriteAppendLine("/Users/smallain/data_tmp/its_log/fail")("its_log_failed_trans2.txt")(input)
 			
 			
 			
